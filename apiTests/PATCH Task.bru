@@ -1,0 +1,22 @@
+meta {
+  name: PATCH Task
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3000/api/tasks/:id
+  body: json
+  auth: none
+}
+
+params:path {
+  id: 2
+}
+
+body:json {
+  {
+    "title": "Test Task Modified",
+    "description": "Test Description Modified"
+  }
+}
