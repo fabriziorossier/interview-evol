@@ -13,4 +13,17 @@ export class Task extends Model<Task> {
     allowNull: false,
   })
   description: string;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: false,
+  })
+  dueDate: Date;
+
+  @Column({
+    type: DataType.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  })
+  completed: boolean;
 }

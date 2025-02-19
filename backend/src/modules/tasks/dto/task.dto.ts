@@ -1,4 +1,5 @@
-import { IsNotEmpty, MinLength } from 'class-validator';
+import { IsNotEmpty, MinLength, IsBoolean, IsDate } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class TaskDto {
   @IsNotEmpty()
@@ -7,4 +8,11 @@ export class TaskDto {
 
   @IsNotEmpty()
   readonly description: string;
+
+  @IsDate()
+  @Type(() => Date)
+  readonly dueDate: Date;
+
+  @IsBoolean()
+  readonly completed: boolean = false;
 }
